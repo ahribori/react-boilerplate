@@ -4,7 +4,6 @@
  와 동일한 뜻이다.
  */
 import React from 'react';
-
 class App extends React.Component {
 	render() {
 		return (
