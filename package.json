@@ -19,6 +19,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
+    "babel-preset-stage-0": "^6.16.0",
     "react": "^15.4.1",
     "react-addons-update": "^15.4.1",
     "react-dom": "^15.4.1",
