@@ -1,3 +1,6 @@
+/*
+	우직한 컴포넌트
+ */
 import React, {Component, PropTypes} from 'react';
 
 const propTypes = {

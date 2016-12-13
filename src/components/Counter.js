@@ -1,9 +1,15 @@
+/*
+	영민한 컴포넌트
+ */
+
 import React, {Component, PropTypes} from 'react';
 
 import Value from './Value';
 import Control from './Control';
-import { connect } from 'react-redux';
 
+// import { bindActionCreators } from 'redux';
+
+import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 const propTypes = {};
@@ -50,14 +56,17 @@ Counter.propTypes = propTypes;
 
 Counter.defaultProps = defaultProps;
 
-const mapStateToProps = (state) => {
+// state를 props로 바인딩 해준다.
+const mapStateToProps = (state /* 이 컴포턴트의 state가 아니다 */) => {
 	return {
 		number: state.counter.number,
 		color: state.ui.color
 	}
 };
 
+// dispatch function을 props로 바인딩 해준다.
 const mapDispatchToProps = (dispatch) => {
+	// return bindActionCreators(actions, dispatch);
 	return {
 		handleIncrement: () => { dispatch(actions.increment()) },
 		handleDecrement: () => { dispatch(actions.decrement()) },
