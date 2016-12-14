@@ -4,7 +4,8 @@
 logs
 *.log
 npm-debug.log*
-
+build/*
+public/bundle.js
 # Runtime data
 pids
 *.pid
