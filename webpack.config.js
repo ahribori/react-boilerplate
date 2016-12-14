@@ -16,7 +16,7 @@ module.exports = {
 		inline: true, // dev server client를 bundle.js에 같이 넣어줄지
 		host: '0.0.0.0', // 개발서버의 주소
 		port: 4000, // 개발서버의 포트
-		contentBase: __dirname + '/public/', // index 파일의 위치
+		contentBase: __dirname + '/public/' // index 파일의 위치
 	},
 
 	module: {
@@ -25,7 +25,7 @@ module.exports = {
 				test: /\.js$/,
 				loaders: ['react-hot', 'babel?' + JSON.stringify({
 					cacheDirectory: true,
-					presets: ['es2015', 'react']
+					presets: ['es2015', 'stage-0', 'react']
 				})],
 				exclude: /node_modules/
 			}
@@ -35,4 +35,4 @@ module.exports = {
 	plugins: [
 		new webpack.HotModuleReplacementPlugin()
 	]
-}
+};
