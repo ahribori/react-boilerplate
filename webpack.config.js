@@ -1,8 +1,13 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
 	/* entry부터 시작하여 다른 의존 파일들을 재귀적으로 호출 */
 	entry: './src/index.js',
+
+	resolve: {
+		root: path.resolve('./src')
+	},
 
 	/* 불러모은 자바스크립트 파일들을 bundle.js로 합쳐서 저장 */
 	output: {
