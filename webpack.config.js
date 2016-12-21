@@ -28,6 +28,10 @@ module.exports = {
 					presets: ['es2015', 'stage-0', 'react']
 				})],
 				exclude: /node_modules/
+			},
+			{
+				test: /\.scss$/,
+				loaders: ['style', 'css', 'sass']
 			}
 		]
 	},
@@ -35,4 +39,4 @@ module.exports = {
 	plugins: [
 		new webpack.HotModuleReplacementPlugin()
 	]
-}
+};
