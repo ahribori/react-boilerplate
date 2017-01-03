@@ -1,8 +1,29 @@
-# react-boilerplate
-react, react-hot, babel, webpack boilerplate
+# React-Redux-Express Boilerplate
+<br/>
 
-    npm install
+ 1. Install libs
+ ```javascript
+ npm install
+ ```
+ <br/>
 
-    npm run dev-server
+ 2. build
 
-    http://localhost:4000/
+ ```javascript
+ npm run build
+ ```
+ <br/>
+
+ 3. startup (build required)
+ ```javascript
+ npm run boot
+ ```
+ - http://localhost:3000/
+
+ <br/>
+
+ 4. run development server
+ ```javascript
+ npm run dev
+ ```
+ - http://localhost:4000/
