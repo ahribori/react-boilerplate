@@ -1,13 +1,20 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
 	/* entry부터 시작하여 다른 의존 파일들을 재귀적으로 호출 */
-	entry: './src/index.js',
+	entry: [
+		'./src/index.js'
+	],
 
 	/* 불러모은 자바스크립트 파일들을 bundle.js로 합쳐서 저장 */
 	output: {
 		path: __dirname + '/public/',
 		filename: 'bundle.js'
+	},
+
+	resolve: {
+		root: path.resolve('./src')
 	},
 
 	module: {
@@ -19,10 +26,14 @@ module.exports = {
 					presets: ['es2015', 'stage-0', 'react']
 				})],
 				exclude: /node_modules/
+			},
+			{
+				test: /\.scss$/,
+				loaders: ['style-loader', 'css-loader', 'sass-loader']
 			}
 		]
 	},
-	
+
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env': {

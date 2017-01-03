@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
 
@@ -9,12 +10,17 @@ module.exports = {
 	entry: [
 		'./src/index.js',
 		'webpack-dev-server/client?http://0.0.0.0:4000', // 개발서버의 포트가 이 부분에 입력되어야 제대로 작동합니다
-		'webpack/hot/only-dev-server'
+		'webpack/hot/only-dev-server',
+		'./src/style.scss'
 	],
 
 	output: {
 		path: '/', // public 이 아니고 /, 이렇게 하면 파일을 메모리에 저장하고 사용합니다
 		filename: 'bundle.js'
+	},
+
+	resolve: {
+		root: path.resolve('./src')
 	},
 
 	// 개발서버 설정입니다
@@ -56,6 +62,10 @@ module.exports = {
 					presets: ['es2015', 'stage-0', 'react']
 				})],
 				exclude: /node_modules/
+			},
+			{
+				test: /\.scss$/,
+				loaders: ['style-loader', 'css-loader', 'sass-loader']
 			}
 		]
 	}
