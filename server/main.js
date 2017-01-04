@@ -36,14 +36,14 @@ import api from './routes';
 app.use('/api', api);
 
 /* 1. public을 static 경로로 설정 */
-app.use('/', express.static(path.join(__dirname, '../public')));
+app.use('/', express.static(path.join(__dirname, './../public')));
 
 /*
  2. 모든 요청에 대하여 index.html을 response 해준다. (SPA)
  반드시 1.보다 아래에 위치하여야 함.
  */
 app.get('*', function (req, res) {
-	res.sendFile(path.resolve(__dirname, '../public/index.html'));
+	res.sendFile(path.resolve(__dirname, './../public/index.html'));
 });
 
 app.listen(port, () => {
